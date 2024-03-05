@@ -1,0 +1,49 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\parindent 0px
+\bibliographystyle{IEEEtran}
+
+\title{GATE 2021-CS Q34}
+\author{EE23BTECH11052 - Abhilash Rapolu}
+
+\begin{document}
+\maketitle
+
+\textbf {Question 34}:
+
+Consider the cyclic redundancy check (CRC) based error detecting scheme having the generator polynomial $X^3 + X + 1$. Suppose the message $m_4m_3m_2m_1m_0 = 11000$ is to be transmitted. Check bits $c_2c_1c_0$ are appended at the end of the message by the transmitter using the above CRC scheme. The transmitted bit string is denoted by $m_4m_3m_2m_1m_0c_2c_1c_0$. The value of the check bit sequence $c_2c_1c_0$ is
+
+\begin{enumerate}
+\item $101$
+\item $110$
+\item $100$  
+\item $111$
+\end{enumerate}
+
+\ Solution\\
+
+\begin{table}[htbp]
+\centering
+\input{table}
+\caption{Given parameters list}
+\end{table}
+\begin{align}
+&\text{Message: } m_4m_3m_2m_1m_0 = 11000 \\
+&\text{Generator polynomial: } g(x) = x^3 + x + 1 = 1101 \\
+&\text{Append zeros: } 11000000 \\
+&\text{Divide by } g(x)\text{ using modulo-2 division:} \\
+&\qquad 1101)11000000 \\
+&\qquad \underline{-1101} \\
+&\qquad \qquad 1110 \\
+&\qquad \underline{-1101} \\
+&\qquad \qquad \quad 111 \\
+&\qquad \underline{-1101} \\
+&\qquad \qquad \quad \quad 100 \\
+&\text{Check bits: } c_2c_1c_0 = 100
+\end{align}
+
+\end{document}
+
